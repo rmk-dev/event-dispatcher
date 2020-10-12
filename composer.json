@@ -1,7 +1,7 @@
 {
     "name": "rmk/event-dispatcher",
     "description": "PSR-14 event dispatcher.",
-    "license": "BSD",
+    "license": "BSD-2.0",
     "authors": [
         {
             "name": "Kiril Savchev",
