@@ -37,6 +37,18 @@ trait EventTrait
     }
 
     /**
+     * @param mixed $emitter
+     *
+     * @return self
+     */
+    public function setEmitter($emitter): self
+    {
+        $this->emitter = $emitter;
+
+        return $this;
+    }
+
+    /**
      * @return ArrayObject
      */
     public function getParams(): ArrayObject

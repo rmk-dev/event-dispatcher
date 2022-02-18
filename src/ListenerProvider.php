@@ -98,8 +98,10 @@ class ListenerProvider implements ListenerProviderInterface
             /** @var Collection $collection */
             $collection = $this->listeners->getOrCreate($eventName, new Collection());
             $collection->uksort($sortFn);
-            $collection->map(function($listener) use ($resolved) {
-                $resolved->append($this->getCallbackResolver()->resolve($listener));
+            $collection->map(function ($priority) use ($resolved) {
+                $priority->map(function ($listener) use ($resolved) {
+                    $resolved->append($this->getCallbackResolver()->resolve($listener));
+                });
             });
         }
 
