@@ -8,7 +8,8 @@ use Psr\EventDispatcher\StoppableEventInterface;
 
 /**
  * Class EventDispatcher
- * @package Rmk\Event
+ *
+ * @package Rmk\EventDispatcher
  */
 class EventDispatcher implements EventDispatcherInterface
 {
@@ -18,7 +19,7 @@ class EventDispatcher implements EventDispatcherInterface
      *
      * @var ListenerProviderInterface
      */
-    protected $listenerProvider;
+    protected ListenerProviderInterface $listenerProvider;
 
     /**
      * EventDispatcher constructor.
@@ -39,7 +40,7 @@ class EventDispatcher implements EventDispatcherInterface
      * @return object
      *   The Event that was passed, now modified by listeners.
      */
-    public function dispatch(object $event)
+    public function dispatch(object $event): object
     {
         $listeners = $this->listenerProvider->getListenersForEvent($event);
         foreach ($listeners as $listener) {
@@ -53,21 +54,12 @@ class EventDispatcher implements EventDispatcherInterface
     }
 
     /**
-     * @return ListenerProviderInterface
-     */
-    public function getListenerProvider(): ListenerProviderInterface
-    {
-        return $this->listenerProvider;
-    }
-
-    /**
      * @param ListenerProviderInterface $listenerProvider
      *
      * @return EventDispatcher
      */
-    public function setListenerProvider(
-        ListenerProviderInterface $listenerProvider
-    ): EventDispatcher {
+    public function setListenerProvider(ListenerProviderInterface $listenerProvider): EventDispatcher
+    {
         $this->listenerProvider = $listenerProvider;
 
         return $this;
