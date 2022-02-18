@@ -10,15 +10,19 @@
     ],
     "autoload": {
         "psr-4": {
-            "Rmk\\Event\\Test\\": "tests/",
-            "Rmk\\Event\\": "src/"
+            "Rmk\\EventDispatcher\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "RmkTests\\EventDispatcher\\": "tests/"
         }
     },
     "require": {
         "php": "^7.4",
         "psr/event-dispatcher": "^1.0",
         "rmk/callback-resolver": "^1.0",
-        "php-ds/php-ds": "^1.2"
+        "rmk/collections": "^1.0"
     },
     "require-dev": {
         "roave/security-advisories": "dev-master",

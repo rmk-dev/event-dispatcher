@@ -1,6 +1,6 @@
 <?php
 
-namespace Rmk\Event;
+namespace Rmk\EventDispatcher;
 
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\EventDispatcher\ListenerProviderInterface;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Rmk\Event\Exception;
+namespace Rmk\EventDispatcher\Exception;
 
 class OutOfBoundsException extends \OutOfBoundsException implements
     EventExceptionInterface
