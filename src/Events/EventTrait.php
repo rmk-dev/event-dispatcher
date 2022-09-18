@@ -75,7 +75,7 @@ trait EventTrait
      */
     public function getParam(string $name, $default = null)
     {
-        return array_key_exists($name, $this->params) ? $this->params[$name] : $default;
+        return $this->params->offsetExists($name) ? $this->params->offsetGet($name) : $default;
     }
 
     /**

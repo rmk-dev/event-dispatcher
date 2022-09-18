@@ -19,7 +19,7 @@
         }
     },
     "require": {
-        "php": "^7.4",
+        "php": "^7.4 || ^8.0",
         "psr/event-dispatcher": "^1.0",
         "rmk/callback-resolver": "^1.0",
         "rmk/collections": "^1.0"
